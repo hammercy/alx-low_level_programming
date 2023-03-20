@@ -8,7 +8,7 @@ int main(void)
 {
 	int az = 122;
 
-	while (az > 57)
+	while (az > 96)
 	{
 		putchar(az);
 		az--;
