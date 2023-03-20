@@ -5,4 +5,5 @@ THIS8 project introduce c-programming.
 3-name : write a script that compile the c code put the out put in cisfun
 4-puts.c: the c-code use puts function to print a string with newline.
 5-printf.c: the c code use printf function to print a string with newline.
+6-size.c: This prints the size of different data type on different computers
 
