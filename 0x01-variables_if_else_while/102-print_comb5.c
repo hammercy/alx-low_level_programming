@@ -10,14 +10,16 @@ int main(void)
 	int j;
 	int k;
 	int y;
+	int cnt;
 
 	for (i = 48; i < 58; i++)
 	{
 		for (y = 48; y < 57; y++)
 		{
+			cnt = y + 1;
 			for  (j = i; j < 58; j++)
 			{
-				for (k = y + 1; k < 58; k++)
+				for (k = cnt % 10; k < 58; k++)
 				{
 					putchar(i);
 					putchar(y);
@@ -33,6 +35,7 @@ int main(void)
 						putchar(',');
 						putchar(' ');
 					}
+					cnt++;
 				}
 			}
 		}
