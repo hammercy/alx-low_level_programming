@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.h"
+
 /**
  * main - Print _putchar string
  * Return: Always 0 (success)
