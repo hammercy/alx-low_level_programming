@@ -2,10 +2,12 @@
 #include "main.h"
 
 /**
- * print _sign - Print the sign of number
+ * print_sign - Print the sign of number
  * @n: The number to be checked
  *
- *Return: 1 for positive 0 for zero and -1 for negative
+ * Description: The function check the sign of a number and print its sing
+ * to the std output
+ * Return: Returns 1 for positive 0 for zero and -1 for negative
  */
 int print_sign(int n)
 {
