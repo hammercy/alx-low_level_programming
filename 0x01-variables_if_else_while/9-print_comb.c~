@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+/**
+ * main - Print combination single digit numbers
+ * Return: Always 0 (success)
+ */
+int main(void)
+{
+	int az = 48;
+
+	while (az < 58)
+	{
+		putchar(az);
+		putchar(',');
+		putchar(' ');
+		az++;
+	}
+	putchar('$');
+	return (0);
+}
