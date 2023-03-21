@@ -13,7 +13,7 @@ int main(void)
 	for (i = 0; i < 8; i++)
 	{
 		tmp = str[i];
-		putchar(tmp);
+		_putchar(tmp);
 	}
 	return (0);
 }
