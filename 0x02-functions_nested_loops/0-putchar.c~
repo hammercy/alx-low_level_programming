@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include "main.h"
+/**
+ * main - Print _putchar string
+ * Return: Always 0 (success)
+ */
+int main(void)
+{
+	int i;
+	char tmp[] = "_putchar";
+
+	for (i = 0; i < 8; i++)
+	{
+		_putchar(tmp[i]);
+	}
+	return (0);
+}
