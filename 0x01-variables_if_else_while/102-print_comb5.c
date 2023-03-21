@@ -16,7 +16,7 @@ int main(void)
 	{
 		for (y = 48; y < 57; y++)
 		{
-			cnt = y + 1;
+			cnt = (y - 48)+ 1;
 			for  (j = i; j < 58; j++)
 			{
 				for (k = (cnt % 10) + 48; k < 58; k++)
