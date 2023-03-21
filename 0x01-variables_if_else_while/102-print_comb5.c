@@ -19,7 +19,7 @@ int main(void)
 			cnt = y + 1;
 			for  (j = i; j < 58; j++)
 			{
-				for (k = cnt % 10; k < 58; k++)
+				for (k = (cnt % 10) + 48; k < 58; k++)
 				{
 					putchar(i);
 					putchar(y);
