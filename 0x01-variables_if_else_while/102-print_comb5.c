@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Print the combination of three digits
+ * main - Print unique combination of four digits
  * Return: Always 0 (success)
  */
 int main(void)
@@ -10,37 +10,33 @@ int main(void)
 	int j;
 	int k;
 	int y;
-	int cnt;
+	int x;
+	int z;
 
-	for (i = 48; i < 58; i++)
+	for  (j = 0; j < 99; j++)
 	{
-		for (y = 48; y < 57; y++)
+		for (k = j + 1; k < 100; k++)
 		{
-			cnt = (y - 48)+ 1;
-			for  (j = i; j < 58; j++)
+			i = 48 + (j / 10);
+			y = 48 + (j % 10);
+			x = 48 + (k / 10);
+			z = 48 + (k % 10);
+			putchar(i);
+			putchar(y);
+			putchar(' ');
+			putchar(x);
+			putchar(z);
+			if (i == 57 && y == 56 && x == 57 && z == 57)
 			{
-				for (k = (cnt % 10) + 48; k < 58; k++)
-				{
-					putchar(i);
-					putchar(y);
-					putchar(' ');
-					putchar(j);
-					putchar(k);
-					if (i == 57 && y == 56 && j == 57 && k == 57)
-					{
-						putchar('\n');
-					}
-					else
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					cnt++;
-				}
+				putchar('\n');
 			}
+			else
+			{
+				putchar(',');
+				putchar(' ');
+			}
+
 		}
-
 	}
-
 	return (0);
 }
