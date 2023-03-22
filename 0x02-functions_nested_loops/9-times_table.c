@@ -18,9 +18,10 @@ void times_table(void)
 			xy = 48 + x % 10;
 			xx = 48 + x / 10;
 			xc = 48 + x;
-			if (j < 9 && x < 10)
+			if (j < 9  && x < 10)
 			{
-				_putchar(' ');
+				if (j != 0)
+					_putchar(' ');
 				_putchar(xc);
 				_putchar(',');
 				_putchar(' ');
