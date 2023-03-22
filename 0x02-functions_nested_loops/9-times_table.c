@@ -32,8 +32,16 @@ void times_table(void)
 				_putchar(',');
 				_putchar(' ');
 			}
-			else if (j == 9)
+			else if (j == 9 && x < 10)
 			{
+				_putchar(' ');
+				_putchar(xc);
+				_putchar('\n');
+			}
+			else
+			{
+				_putchar(xx);
+				_putchar(xy);
 				_putchar('\n');
 			}
 		}
