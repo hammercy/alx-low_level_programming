@@ -16,7 +16,7 @@ void rev_string(char *s)
 		tmp = *(s + i);
 		*(s + i) = *(s + (strlen - 1) - i);
 		*(s + (strlen - 1) - i) = tmp;
-       }
+	}
 }
 /**
  * _strlen - counts the character in string array
