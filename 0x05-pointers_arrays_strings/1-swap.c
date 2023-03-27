@@ -3,8 +3,8 @@
 
 /**
  * swap_int - swapts two integers
- *@*a: pointer to first operand
- *@*b: Pointer to sencond operand
+ *@a: pointer to first operand
+ *@b: Pointer to sencond operand
  *
  */
 

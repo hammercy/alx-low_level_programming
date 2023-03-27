@@ -3,7 +3,7 @@
 
 /**
  * _strlen - counts the character in string array
- * @*s: pointer to a string
+ * @s: pointer to a string
  *
  * Return: strlen- the length of the string array
  */
