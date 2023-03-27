@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "main.h"
 
+/**
+ * puts_half - print the sencond of the string
+ * @str: pointer to the string to be printed
+ */
 void puts_half(char *str)
 {
 	int strlen, i;
