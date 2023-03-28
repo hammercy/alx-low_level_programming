@@ -18,6 +18,7 @@ void print_rev(char *s)
 		c = *(s + strlen);
 		_putchar(c);
 	}
+	_putchar('\n');
 }
 /**
  * _strlen - counts the character in string array
