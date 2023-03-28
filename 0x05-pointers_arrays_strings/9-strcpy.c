@@ -4,6 +4,8 @@
  * _strcpy - copy string from src to dest
  * @dest: Pointer - destination of the copy
  * @src:  Pointer - source of the copy
+ *
+ * Return: *dest -pointer the destination array
  */
 char *_strcpy(char *dest, char *src)
 {
