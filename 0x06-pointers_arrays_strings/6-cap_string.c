@@ -9,13 +9,54 @@
  */
 char *cap_string(char *str)
 {
-	int i, m;
+	int i, m, j;
 
-	m = sizeof(str);
-	for (i = 1; i < m; i++)
+	m = _strlen(str);
+	i = 1;
+	while (i < m && str[i] != '\0')
 	{
-		if (str[i - 1] == ' ' && str[i] > 96 && str[i] < 123)
-			str[i] = str[i] - 32;
+		j = i - 1;
+		switch (str[j])
+		{
+		case ' ':
+		case ',':
+		case '\n':
+		case ';':
+		case '.':
+		case '?':
+		case '\"':
+		case '(':
+		case ')':
+		case '{':
+		case '}':
+		case '!':
+			if (str[i] > 96 && str[i] < 123)
+				str[i] = str[i] - 32;
+			break;
+		default:
+			break;
+		}
+		i++;
 	}
+
 	return (str);
+}
+/**
+ * _strlen - counts the character in string array
+ * @s: pointer to a string
+ *
+ * Return: strlen- the length of the string array
+ */
+int _strlen(char *s)
+{
+	int strlen;
+
+	strlen = 0;
+	while (*(s + strlen) != '\0')
+	{
+		strlen++;
+	}
+
+	return (strlen);
+
 }
