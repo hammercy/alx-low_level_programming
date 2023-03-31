@@ -13,16 +13,33 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 	int i, k;
-	int m;
 
-	m = sizeof(dest);
-	k = sizeof(src);
+	k = _strlen(src);
 	i = 0;
-	while (i < n && i < m && i < k)
+	while (i < n && i < k)
 	{
 		dest[i] = src[i];
 		i++;
 	}
 
 	return (dest);
+}
+/**
+ * _strlen - counts the character in string array
+ * @s: pointer to a string
+ *
+ * Return: strlen- the length of the string array
+ */
+int _strlen(char *s)
+{
+	int strlen;
+
+	strlen = 0;
+	while (*(s + strlen) != '\0')
+	{
+		strlen++;
+	}
+
+	return (strlen);
+
 }
