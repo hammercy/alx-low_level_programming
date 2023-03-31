@@ -11,19 +11,37 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i;
-	int m;
+	int i, k;
+	int m, n;
 
-	m = 0;
-	for (i = 0;, i < m && i < n; i++)
+	k = _strlen(s1);
+	n = _strlen(s2);
+	i = 0;
+	while (i < k || i < n)
 	{
 		m =  s1[i] - s2[i];
-		if (m > 0)
+		if (m > 0 || m < 0)
 			return (m);
-		else if(m < 0)
-			return (m);
-		else
-			continue;
+		i++;
 	}
-	return (0);
+	return (m);
+}
+/**
+ * _strlen - counts the character in string array
+ * @s: pointer to a string
+ *
+ * Return: strlen- the length of the string array
+ */
+int _strlen(char *s)
+{
+	int strlen;
+
+	strlen = 0;
+	while (*(s + strlen) != '\0')
+	{
+		strlen++;
+	}
+
+	return (strlen);
+
 }
