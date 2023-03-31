@@ -18,7 +18,6 @@ char *_strcat(char *dest, char *src)
 	n = sizeof(dest);
 	m = sizeof(src);
 	i = 0;
-	printf("size dest %d\n size of src %d\n", n, m);
 	while (dest[i] != '\0')
 	{
 		i++;
