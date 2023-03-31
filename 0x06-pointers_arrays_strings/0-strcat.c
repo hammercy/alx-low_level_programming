@@ -12,10 +12,9 @@
 char *_strcat(char *dest, char *src)
 {
 	int i, j;
-	int  n, m;
+	int m;
 
 	j = 0;
-	n = sizeof(dest);
 	m = sizeof(src);
 	i = 0;
 	while (dest[i] != '\0')
