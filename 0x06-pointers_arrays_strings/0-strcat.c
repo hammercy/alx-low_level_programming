@@ -14,7 +14,7 @@ char *_strcat(char *dest, char *src)
 	int i, j;
 	int  n, m;
 
-	j =0;
+	j = 0;
 	n = sizeof(dest);
 	m = sizeof(src);
 	for (i = 0; i < n - 1; i++)
