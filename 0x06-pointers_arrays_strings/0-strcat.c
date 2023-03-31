@@ -19,7 +19,7 @@ char *_strcat(char *dest, char *src)
 	m = _strlen(src);
 	n = _strlen(dest);
 	i = n;
-	while( j < m)
+	while (j < m)
 	{
 		*(dest + i) = *(src + j);
 		j++;
@@ -57,10 +57,10 @@ int _strlen(char *s)
  */
 int _cntnull(char *str, int n)
 {
-	int nl ;
+	int nl;
 
 	nl = n;
-	while( *(str + nl) == '\0')
+	while (*(str + nl) == '\0')
 	{
 		nl++;
 	}
