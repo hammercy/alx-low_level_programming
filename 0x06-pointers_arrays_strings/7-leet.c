@@ -11,23 +11,37 @@
  */
 char *leet(char *str)
 {
-	int i, m;
+	int i, m, j;
+	char arrc[] = "aAeEoOtTlL";
+	char arrn[] = "4433007711";
 
-	m = sizeof(str);
+	m = _strlen(str);
 	for (i = 0; i < m; i++)
 	{
-		if (str[i] == 'a' || str[i] == 'A')
-			str[i] = '4';
-		else if (str[i] == 'e' || str[i] == 'E')
-			str[i] = '3';
-		else if (str[i] == 'o' || str[i] == 'O')
-			str[i] = '0';
-		else if (str[i] == 't' || str[i] == 'T')
-			str[i] = '7';
-		else if (str[i] == 'l' || str[i] == 'L')
-			str[i] = '1';
-		else
-			continue;
-  	}
+		for (j = 0; j < 10; j++)
+		{
+			if (str[i] == arrc[j])
+				str[i] = arrn[j];
+		}
+	}
 	return (str);
+}
+/**
+ * _strlen - counts the character in string array
+ * @s: pointer to a string
+ *
+ * Return: strlen- the length of the string array
+ */
+int _strlen(char *s)
+{
+	int strlen;
+
+	strlen = 0;
+	while (*(s + strlen) != '\0')
+	{
+		strlen++;
+	}
+
+	return (strlen);
+
 }
