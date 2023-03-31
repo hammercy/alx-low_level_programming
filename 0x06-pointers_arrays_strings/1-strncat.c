@@ -11,25 +11,37 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i , j;
+	int i, j;
 	int m, k;
 
-	m = sizeof(dest);
-	k = sizeof(src);
-	i = 0;
+	m = _strlen(dest);
+	k = _strlen(src);
+	i = m;
 	j = 0;
-	while  (i < m && j < n && j < k)
+	while  (j < n || j < k)
 	{
-		if (dest[i] != '\0')
-		{
-			i++;
-			continue;
-		}
-		else
-		{
-			dest[i] = src[j];
-			j++
-		}
+		dest[i] = src[j];
+		j++;
+		i++;
 	}
 	return (dest);
+}
+/**
+ * _strlen - counts the character in string array
+ * @s: pointer to a string
+ *
+ * Return: strlen- the length of the string array
+ */
+int _strlen(char *s)
+{
+	int strlen;
+
+	strlen = 0;
+	while (*(s + strlen) != '\0')
+	{
+		strlen++;
+	}
+
+	return (strlen);
+
 }
