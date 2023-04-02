@@ -31,7 +31,7 @@ void print_to_98(int n)
  */
 void _putdigit(int m)
 {
-	int  i, x, y, j;
+	int  i, y, j;
 	char x[100];
 
 	y = 0;
