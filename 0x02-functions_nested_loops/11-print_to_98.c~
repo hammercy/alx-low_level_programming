@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * print_to_98 - Prints natural number from n to 98
+ * @n: argument
+ *
+ */
+void print_to__fjlajf
