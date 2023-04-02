@@ -31,12 +31,29 @@ void print_to_98(int n)
  */
 void _putdigit(int m)
 {
-	int  i;
+	int  i, x, y, j;
+	char x[100];
 
-	while (m > 0)
+	y = 0;
+	if (m < 0)
+		j = -1 * m;
+	else
+		j = m;
+	while (j > 0)
 	{
-		i = m % 10;
-		m = m / 10;
-		_putchar (i + 48);
+		i = j % 10;
+		j = j / 10;
+		x[y] = 48 + i;
+		y++;
+	}
+
+	if (m < 0)
+		x[y] = '-';
+	else
+		y = y - 1;
+	while (y > -1)
+	{
+		_putchar(x[y]);
+		y--;
 	}
 }
