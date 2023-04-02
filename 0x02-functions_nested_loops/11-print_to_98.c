@@ -50,8 +50,10 @@ void _putdigit(int m)
 
 	if (m < 0)
 		x[y] = '-';
-	else
+	else if (m > 0)
 		y = y - 1;
+	else
+		x[y] = 48;
 	while (y > -1)
 	{
 		_putchar(x[y]);
