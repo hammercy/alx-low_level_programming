@@ -24,6 +24,7 @@ void print_to_98(int n)
 			break;
 	}
 	_putdigit(98);
+	_putchar('\n');
 }
 /**
  * _putdigit - print number with putchar function
