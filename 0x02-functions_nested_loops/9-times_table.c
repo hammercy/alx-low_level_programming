@@ -14,36 +14,23 @@ void times_table(void)
 		{
 			x = i * j;
 			xy = 48 + x % 10;
-			xx = 48 + x / 10;
-			if (x < 10)
+			xx = x / 10;
+			if (xx == 0)
+				xx = 32;
+			else
+				xx = 48 + xx;
+			_putchar(xx);
+			_putchar(xy);
+			if (j != 9)
 			{
-				if (j != 0)
-					_putchar(' ');
-				_putchar(xy);
-				if (j != 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar('\n');
-				}
+				_putchar(',');
+				_putchar(' ');
 			}
 			else
 			{
-				_putchar(xx);
-				_putchar(xy);
-				if (j != 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar('\n');
-				}
+				_putchar('\n');
 			}
+
 
 		}
 	}
