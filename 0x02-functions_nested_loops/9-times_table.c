@@ -15,11 +15,16 @@ void times_table(void)
 			x = i * j;
 			xy = 48 + x % 10;
 			xx = x / 10;
-			if (xx == 0)
+			if (xx == 0 && j != 0)
+			{
 				xx = 32;
-			else
+				_putchar(xx);
+			}
+			else if (xx != 0)
+			{
 				xx = 48 + xx;
-			_putchar(xx);
+				_putchar(xx);
+			}
 			_putchar(xy);
 			if (j != 9)
 			{
@@ -30,8 +35,6 @@ void times_table(void)
 			{
 				_putchar('\n');
 			}
-
-
 		}
 	}
 }
