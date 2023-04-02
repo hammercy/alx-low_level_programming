@@ -8,8 +8,9 @@
  */
 void print_to_98(int n)
 {
-	int m, j, dgt, i;
+	int i;
 
+	i = n;
 	while (i != 98)
 	{
 		_putdigit(i);
