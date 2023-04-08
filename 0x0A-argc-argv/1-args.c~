@@ -1,0 +1,17 @@
+1#include <stdlib.h>
+ 2#include <stdio.h>
+ 3/**                                                          
+ 4 * main - print the name of the program                      
+ 5 * @argc: number command line arguments                      
+ 6 * @argv: pointer to sting array  - command line arguments   
+ 7 *                                                           
+ 8 * Return: always 0 on success                               
+ 9 */
+10int main(int argc, char *argv[])
+11{
+12        int i = argc;
+13
+14        i = 0;
+15        printf("%s\n", argv[0]);
+16        return (i);
+17}
