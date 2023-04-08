@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * main - print the name of the program
+ * main - sum the arguments
  * @argc: number command line arguments
  * @argv: pointer to sting array  - command line arguments
  *
