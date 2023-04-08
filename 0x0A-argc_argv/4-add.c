@@ -5,7 +5,8 @@
  * main - print the name of the program
  * @argc: number command line arguments
  * @argv: pointer to sting array  - command line arguments
- * Return: always 0 on success
+ *
+ * Return: always 0 on success 1 on error
  */
 int main(int argc, char *argv[])
 {
