@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
+
+
+/**
+ * _strdup - copy string to another pointer  and return it
+ * @str: string pointer to be copied
+ *
+ * Return: pointer to  new created string
+ */
+char *_strdup(char *str)
+{
+	unsigned int i;
+	unsigned int size = _strlen(str);
+	char *strptr = (char *) malloc(size * sizeof(char));
+
+	if (strptr = NULL)
+		return (NULL);
+	else
+	{
+		for (i = 0; i < size; i++)
+			strptr[i] =   str[i];
+
+	}
+
+	return (strptr);
+}
