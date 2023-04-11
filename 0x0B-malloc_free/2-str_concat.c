@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 	unsigned int lens1, lens2, i, lenptr;
 	char *strptr;
 
-	if (sl == NULL && s2 == NULL)
+	if (s1 == NULL && s2 == NULL)
 	{
 		return (NULL);
 	}
