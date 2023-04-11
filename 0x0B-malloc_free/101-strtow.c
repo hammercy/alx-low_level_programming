@@ -13,12 +13,14 @@ char **strtow(char *str)
 	unsigned int row = 0, col = 0;
 	char **wrdptr;
 
+	if (str == NULL || str[0] == '\0')
+		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
 			row++;
 	}
-	wrdptr = (char **) malloc((row + 1) * sizeof(char *));
+	wrdptr = (char **) malloc((row + 2) * sizeof(char *));
 	if (wrdptr == NULL)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
@@ -27,7 +29,7 @@ char **strtow(char *str)
 		if (str[i] == ' ')
 		{
 			wrdptr[j] = (char *) malloc((col + 1) * sizeof(char));
-			if (wrdptr[j] ==NULL)
+			if (wrdptr[j] == NULL)
 				return (NULL);
 			for (k = 0; k < col; k++)
 				wrdptr[j][k] = str[i - col + k];
@@ -36,5 +38,6 @@ char **strtow(char *str)
 			j++;
 		}
 	}
+	wrdptr[j + 1] = NULL;
 	return (wrdptr);
 }
