@@ -33,11 +33,22 @@ int _strlen(char *s)
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int lens1 = _strlen(s1);
-	unsigned int lens2 = _strlen(s2);
-	unsigned int i;
-	unsigned int lenptr = lens1 + lens2;
-	char *strptr = (char *) malloc(lenptr * sizeof(char));
+	unsigned int lens1, lens2, i, lenptr;
+	char *strptr;
+
+	if (sl = NULL && s2 == NULL)
+	{
+		return (NULL);
+	}
+	else
+	{
+		if (s1 == NULL)
+			lens1 = 0;
+		else if (s2 == NULL)
+		     lens2 = 0;
+	}
+	lenptr = lens1 + lens2;
+	strptr = (char *) malloc((lenptr + 2) * sizeof(char));
 
 	if (strptr == NULL)
 	{
