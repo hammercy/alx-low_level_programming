@@ -43,9 +43,15 @@ char *_strdup(char *str)
 	{
 		size = _strlen(str);
 		strptr  = (char *) malloc((size + 1) * sizeof(char));
-		for (i = 0; i < size; i++)
-			strptr[i] =   str[i];
-
+		if (strptr == NULL)
+		{
+			return (NULL);
+		}
+		else
+		{
+			for (i = 0; i < size; i++)
+				strptr[i] =   str[i];
+		}
 	}
 
 	return (strptr);
