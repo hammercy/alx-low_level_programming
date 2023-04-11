@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#inclue  "main.h"
+#include  "main.h"
 
 /**
  * create_array - initialze the array to a char c
