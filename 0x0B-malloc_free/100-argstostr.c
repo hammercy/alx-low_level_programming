@@ -6,6 +6,8 @@
  * @ac: number of arguments
  * @av: point to 2d-string arguments
  *
+ * Description: the function arguments are bundled
+ * in string togther then they are separated using neline
  * Return: prt-to-concatnated
  */
 char *argstostr(int ac, char **av)
