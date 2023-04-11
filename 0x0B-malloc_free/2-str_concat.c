@@ -40,24 +40,23 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
+	else if (s1 == NULL)
+	{
+		lens1 = 0;
+		lens2 = _strlen(s2);
+	}
+	else if (s2 == NULL)
+	{
+		lens2 = 0;
+		lens1 = _strlen(s1);
+	}
 	else
 	{
-		if (s1 == NULL)
-		{
-			lens1 = 0;
-		}
-		else if (s2 == NULL)
-		{
-			lens2 = 0;
-		}
-		else
-		{
-			lens1 = _strlen(s1);
-			lens2 = _strlen(s2);
-		}
+		lens1 = _strlen(s1);
+		lens2 = _strlen(s2);
 	}
 	lenptr = lens1 + lens2;
-	strptr = (char *) malloc((lenptr + 2) * sizeof(char));
+	strptr = (char *) malloc((lenptr + 1) * sizeof(char));
 
 	if (strptr == NULL)
 	{
