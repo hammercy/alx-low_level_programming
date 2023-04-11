@@ -21,12 +21,12 @@ char *argstostr(int ac, char **av)
 			j = j;
 		memsize = memsize + j + 1;
 	}
-	strptr = (char *)malloc(memsize * sizeof(char));
+	strptr = (char *)malloc((memsize + 1) * sizeof(char));
 	if (strptr == NULL)
 		return (NULL);
 	for  (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
+		for (j = 0; av[i][j] != '\0' || av[i][j] != ' '; j++)
 		{
 			strptr[ms] = av[i][j];
 			ms++;
