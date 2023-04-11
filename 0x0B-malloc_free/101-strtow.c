@@ -57,7 +57,7 @@ int _cntwrds(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
-			cnt++
+			cnt++;
 	}
 	cnt++;
 	return (cnt);
