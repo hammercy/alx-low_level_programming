@@ -13,31 +13,28 @@ char **strtow(char *str)
 	unsigned int row = 0, col = 0;
 	char **wrdptr;
 
-	while (str[i] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
 			row++;
-		i++;
 	}
-	i = j = 0;
-	while (str[i] != '\0' && j < row + 1)
+	wrdptr = (char **) malloc((row + 1) * sizeof(char *));
+	if (wrdptr == NULL)
+		return (NULL);
+	for (i = 0; stri[i] != '\0'; i++)
 	{
-		col = 0;
-		if (str[i] != ' ')
+		col++;
+		if (str[i] == ' ')
 		{
-			col++;
-		}
-		else
-		{
-			wrdptr[j] = (char *) malloc(col * sizeof(char));
-			k = 0;
-			while (k < col)
-			{
+			wrdptr[j] = (char *) malloc((col + 1) * sizeof(char));
+			if (wrdptr[j] ==NULL)
+				return (NULL);
+			for (k = 0; k < col; k++)
 				wrdptr[j][k] = str[i - col + k];
-				k++;
-			}
-			wrdptr[j][k] = '\n';
+			wrdptr[j][k] = '\0';
+			col = 0;
+			j++
 		}
-		j++;
 	}
+	return (wrdptr);
 }
