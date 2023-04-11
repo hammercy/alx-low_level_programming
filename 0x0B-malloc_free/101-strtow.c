@@ -13,7 +13,7 @@ char **strtow(char *str)
 	unsigned int row = 0, col = 0;
 	char **wrdptr;
 
-	if (str == NULL || str[0] == '\0')
+	if (str == NULL || str[0] == '\0' || str[0] == '\b' || str[0] == ' ')
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
