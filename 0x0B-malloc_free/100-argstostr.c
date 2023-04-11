@@ -10,7 +10,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i;
+	int i, j;
 
 	char **strptr = (char **)malloc(ac * sizeof(char *));
 

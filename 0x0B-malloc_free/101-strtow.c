@@ -9,7 +9,7 @@
  */
 char **strtow(char *str)
 {
-	unsigned int i = 0, j = 0;
+	unsigned int i = 0, j = 0, k = 0;
 	unsigned int row = 0, col = 0;
 	char **wrdptr;
 
