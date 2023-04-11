@@ -16,19 +16,19 @@ char **strtow(char *str)
 	row = _cntwrds(str);
 	if (row == 0)
 		return (NULL);
-	wrdptr = (char **) malloc((row + 2) * sizeof(char *));
+	wrdptr = (char **) malloc((row + 1) * sizeof(char *));
 	if (wrdptr == NULL)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		col++;
-		if (str[i] == ' ')
+		if (str[i] == ' ' || str[i + 1] == '\0')
 		{
 			wrdptr[j] = (char *) malloc((col + 1) * sizeof(char));
 			if (wrdptr[j] == NULL)
 				return (NULL);
 			for (k = 0; k < col; k++)
-				wrdptr[j][k] = str[i - col + k];
+				wrdptr[j][k] = str[i + 1 - col + k];
 			wrdptr[j][k] = '\0';
 			col = 0;
 			j++;
