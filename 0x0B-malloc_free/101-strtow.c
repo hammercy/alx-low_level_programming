@@ -33,7 +33,7 @@ char **strtow(char *str)
 				wrdptr[j][k] = str[i - col + k];
 			wrdptr[j][k] = '\0';
 			col = 0;
-			j++
+			j++;
 		}
 	}
 	return (wrdptr);
