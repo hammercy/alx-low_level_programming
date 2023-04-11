@@ -34,7 +34,7 @@ char *_strdup(char *str)
 	unsigned int i, size;
 	char *strptr;
 
-	if(strptr == NULL || str == NULL)
+	if (str == NULL)
 	{
 		strptr = NULL;
 		return (NULL);
