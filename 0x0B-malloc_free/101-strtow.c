@@ -21,7 +21,7 @@ char **strtow(char *str)
 	wrdptr = (char **) malloc((row + 1) * sizeof(char *));
 	if (wrdptr == NULL)
 		return (NULL);
-	for (i = 0; stri[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		col++;
 		if (str[i] == ' ')
