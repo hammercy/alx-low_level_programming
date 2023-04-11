@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 	unsigned int lens1, lens2, i, lenptr;
 	char *strptr;
 
-	if (sl = NULL && s2 == NULL)
+	if (sl == NULL && s2 == NULL)
 	{
 		return (NULL);
 	}
@@ -45,7 +45,7 @@ char *str_concat(char *s1, char *s2)
 		if (s1 == NULL)
 			lens1 = 0;
 		else if (s2 == NULL)
-		     lens2 = 0;
+			lens2 = 0;
 	}
 	lenptr = lens1 + lens2;
 	strptr = (char *) malloc((lenptr + 2) * sizeof(char));
