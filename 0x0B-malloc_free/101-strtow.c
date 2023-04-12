@@ -22,7 +22,7 @@ char **strtow(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		col++;
-		if ((str[i] == ' ' && str[i + 1] != ' ') || str[i + 1] == '\0')
+		if ((str[i] == ' ' && str[i + 1] != ' ' && i != 0) || str[i + 1] == '\0')
 		{
 			wrdptr[j] = (char *) malloc((col + 1) * sizeof(char));
 			if (wrdptr[j] == NULL)
@@ -57,7 +57,7 @@ int _cntwrds(char *str)
 		return (0);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ')
+		if (str[i] == ' ' && i != 0)
 		{
 			for (j = i + 1; str[j] == ' '; j++)
 				nspc++;
