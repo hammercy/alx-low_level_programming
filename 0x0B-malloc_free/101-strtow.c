@@ -9,7 +9,7 @@
  */
 char **strtow(char *str)
 {
-	unsigned int i = 0, j = 0, k = 0;
+	unsigned int i = 0, j = 0, k = 0, iwrd;
 	unsigned int row = 0, col = 0;
 	char **wrdptr;
 
@@ -21,17 +21,22 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		col++;
-		if ((str[i] == ' ' && str[i + 1] != ' ' && i != 0) || str[i + 1] == '\0')
+		if ((str[i] == ' ' && str[i + 1] != ' ' && col != 0) || str[i + 1] == '\0')
 		{
 			wrdptr[j] = (char *) malloc((col + 1) * sizeof(char));
 			if (wrdptr[j] == NULL)
 				return (NULL);
 			for (k = 0; k < col; k++)
-				wrdptr[j][k] = str[i + 1 - col + k];
+				wrdptr[j][k] = str[iwrd + k];
 			wrdptr[j][k] = '\0';
 			col = 0;
 			j++;
+		}
+		if (str[i] != ' ')
+		{
+			col++;
+			if(col == 1)
+				iwrd = i;
 		}
 	}
 	wrdptr[j + 1] = NULL;
@@ -57,13 +62,13 @@ int _cntwrds(char *str)
 		return (0);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ' && i != 0)
+		if (str[i] == ' ')
 		{
 			for (j = i + 1; str[j] == ' '; j++)
 				nspc++;
-			i = j;
-			if (str[i] != '\0')
+			if (str[j] != '\0'&& i != 0 )
 				wcnt++;
+			i = j;
 		}
 	}
 	if (nspc > 1 && wcnt == 0)
