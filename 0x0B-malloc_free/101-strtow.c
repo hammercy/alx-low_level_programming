@@ -4,13 +4,11 @@
 /**
  * strtow - splits a string into a word
  * @str: point to the string
- *
  * Return: string to 2d-arry of words
  */
 char **strtow(char *str)
 {
-	unsigned int i = 0, j = 0, k = 0, iwrd;
-	unsigned int row = 0, col = 0;
+	unsigned int i = 0, j = 0, k = 0, iwrd, row = 0, col = 0;
 	char **wrdptr;
 
 	row = _cntwrds(str);
@@ -21,7 +19,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((str[i] == ' ' && str[i + 1] != ' ' && col != 0) || str[i + 1] == '\0')
+		if ((str[i] == ' ' && str[i + 1] != ' ' && col != 0) || (col != 0 && str[i + 1] == '\0'))
 		{
 			wrdptr[j] = (char *) malloc((col + 1) * sizeof(char));
 			if (wrdptr[j] == NULL)
@@ -33,11 +31,9 @@ char **strtow(char *str)
 			j++;
 		}
 		if (str[i] != ' ')
-		{
 			col++;
-			if(col == 1)
-				iwrd = i;
-		}
+		if(col == 1)
+			iwrd = i;
 	}
 	wrdptr[j + 1] = NULL;
 	return (wrdptr);
