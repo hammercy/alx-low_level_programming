@@ -22,7 +22,7 @@ char **strtow(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		col++;
-		if (str[i] == ' ' || str[i + 1] == '\0')
+		if ((str[i] == ' ' && str[i + 1] != ' ') || str[i + 1] == '\0')
 		{
 			wrdptr[j] = (char *) malloc((col + 1) * sizeof(char));
 			if (wrdptr[j] == NULL)
@@ -45,22 +45,31 @@ char **strtow(char *str)
  */
 int _cntwrds(char *str)
 {
-	int cnt, i;
+	int wcnt, i, j, nspc;
 
-	cnt = 0;
+	wcnt = 0;
+	nspc = 0;
 	if (str == NULL)
 		return (0);
 	else if (_strlen(str) == 0)
 		return (0);
-	else if (_strlen(str) == 1 && (str[0] == ' ' || str[0] == '\b'))
+	else if (str[1] == '\0' && (str[0] == ' ' || str[0] == '\b'))
 		return (0);
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0';)
 	{
 		if (str[i] == ' ')
-			cnt++;
+		{
+			for (j = i + 1; str[j] == ' '; j++)
+				nspc++;
+			i = j;
+			if (str[i] != '\0')
+				wcnt++;
+		}
 	}
-	cnt++;
-	return (cnt);
+	if (nspc > 1 && wcnt == 0)
+		return (0);
+	wcnt++;
+	return (wcnt);
 }
 /**
  * _strlen - counts the character in string array
