@@ -55,7 +55,7 @@ int _cntwrds(char *str)
 		return (0);
 	else if (str[1] == '\0' && (str[0] == ' ' || str[0] == '\b'))
 		return (0);
-	for (i = 0; str[i] != '\0';)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
 		{
