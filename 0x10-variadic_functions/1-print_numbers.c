@@ -23,7 +23,13 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	}
 	_putchar('\n');
 	va_end(args);
+
 }
+/**
+ * _putint - print integers
+ * @a: integer to be printed
+ *
+ */
 
 void _putint(int a)
 {
@@ -37,8 +43,13 @@ void _putint(int a)
 	{
 		if ((a % mult) != 0)
 			break;
-	        --cntdigit;
+		cntdigit = cntdigit + 1;
 		mult = mult / 10;
+	}
+	if (a < 0)
+	{
+		a = -1 * a;
+		_putchar('-');
 	}
 	for (i = cntdigit; i > 0; i--)
 	{
