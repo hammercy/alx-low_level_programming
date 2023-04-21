@@ -40,7 +40,7 @@ void _putint(int a)
 {
 	const unsigned int maxdigit = 10;
 	unsigned int i, cntdigit, mult = 1;
-	int c, b ;
+	int c, b;
 
 	if (a < 0)
 		b = -1 * a;
