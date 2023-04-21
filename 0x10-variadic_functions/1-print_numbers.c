@@ -15,16 +15,17 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list args;
 
 	va_start(args, n);
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n - 1; i++)
 	{
 		_putint(va_arg(args, int));
-		if (separator !=NULL)
+		if (separator != NULL)
 		{
 			for (j = 0; separator[j] != '\0'; j++)
 				_putchar(separator[j]);
 
 		}
 	}
+	_putint(va_arg(args, int));
 	_putchar('\n');
 	va_end(args);
 
@@ -39,10 +40,14 @@ void _putint(int a)
 {
 	const unsigned int maxdigit = 10;
 	unsigned int i, cntdigit, mult = 1;
-	int b = a;
+	int c, b ;
 
+	if (a < 0)
+		b = -1 * a;
+	else
+		b = a;
 	cntdigit = maxdigit;
-	for (i = 0; i < maxdigit; i++)
+	for (i = 0; i < maxdigit - 1; i++)
 		mult = mult * 10;
 	for (i = 0; i < maxdigit; i++)
 	{
@@ -57,10 +62,18 @@ void _putint(int a)
 		a = -1 * a;
 		_putchar('-');
 	}
-	for (i = cntdigit; i > 0; i--)
+	if (a == 0)
 	{
-		_putchar(48 + (a / mult));
-		a = a % mult;
-		mult = mult / 10;
+		_putchar('0');
+	}
+	else
+	{
+		for (i = cntdigit; i > 0; i--)
+		{
+			c = a / mult;
+			_putchar((48 + c));
+			a = a % mult;
+			mult = mult / 10;
+		}
 	}
 }
