@@ -31,8 +31,12 @@ void print_all(const char * const format, ...)
 			printf("%f, ", va_arg(args, double));
 			break;
 		case 's':
-			printf("%s, ", va_arg(args, char *));
-			break;
+			if (va_arg(args,char *) != NULL)
+			{
+				printf("%s, ", va_arg(args, char *));
+				break;
+			}
+			printf("%s, ", "nil");
 		}
 		j++;
 	}
@@ -48,8 +52,12 @@ void print_all(const char * const format, ...)
 			printf("%f", va_arg(args, double));
 			break;
 		case 's':
-			printf("%s", va_arg(args, char *));
-			break;
+			if (va_arg(args, char *) != NULL)
+			{
+				printf("%s", va_arg(args, char *));
+				break;
+			}
+			printf("%s", "nil");
 		}
 	printf("\n");
 	va_end(args);
