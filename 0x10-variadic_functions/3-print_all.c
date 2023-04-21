@@ -14,6 +14,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int j;
 	va_list args;
+	char *ptrstr;
 
 	va_start(args, format);
 	j = 0;
@@ -31,12 +32,14 @@ void print_all(const char * const format, ...)
 			printf("%f, ", va_arg(args, double));
 			break;
 		case 's':
-			if (va_arg(args,char *) != NULL)
+			ptrstr = va_arg(args, char *);
+			if (ptrstr == NULL)
 			{
-				printf("%s, ", va_arg(args, char *));
+				printf("%s, ", "nil");
 				break;
 			}
-			printf("%s, ", "nil");
+			printf("%s, ",  ptrstr);
+			break;
 		}
 		j++;
 	}
@@ -52,12 +55,14 @@ void print_all(const char * const format, ...)
 			printf("%f", va_arg(args, double));
 			break;
 		case 's':
-			if (va_arg(args, char *) != NULL)
+			ptrstr = va_arg(args, char *);
+			if (ptrstr == NULL)
 			{
-				printf("%s", va_arg(args, char *));
+				printf("This last: %s", "nil");
 				break;
 			}
-			printf("%s", "nil");
+			printf("%s", ptrstr);
+			break;
 		}
 	printf("\n");
 	va_end(args);
