@@ -8,6 +8,7 @@
  *
  * Description: singly linked list node structure
  */
+int _putchar(char c);
 typedef struct list_s
 {
     char *str;
