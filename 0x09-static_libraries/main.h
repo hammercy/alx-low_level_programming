@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-int atoi(const char *str);
+int _atoi(const char *str);
 void print_diagsums(int *a, int size);
 void print_chessboard(char (*a)[8]);
 char *_strstr(char *haystack, char *needle);
