@@ -1,5 +1,5 @@
 #include "main.h"
-#incluse <string.h>
+#include <string.h>
 /**
  * is_palindrome - checks if a string is palindrome
  * @s: string to be checked.
