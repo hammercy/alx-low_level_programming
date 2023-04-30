@@ -1,5 +1,5 @@
 #include "main.h"
-
+#incluse <string.h>
 /**
  * is_palindrome - checks if a string is palindrome
  * @s: string to be checked.
@@ -8,11 +8,9 @@
  */
 int is_palindrome(char *s)
 {
-	int len, i;
+	int len;
 
-	len = 0;
-	for (i = 0; s[i] != '\0'; i++)
-		len++;
+	len =  strlen(s);
 	if (len <= 1)
 		return (1);
 	else if (*s != *(s + len - 1))
