@@ -3,20 +3,20 @@
 #include <stdio.h>
 
 /**
- * free_listint - frees a listint_t linked list and set head to null.
+ * free_listint2 - frees a listint_t linked list and set head to null.
  * @head: pointer to the linked list tobe freed.
  *
  */
-void free_listint(listint_t *head)
+void free_listint2(listint_t *head)
 {
-        listint_t *ptr, *freed;
+        listint_t *ptr, *frd;
 
 	ptr = head;
         while (ptr != NULL)
         {
-                freed = ptr;
+                frd = ptr;
                 ptr = ptr->next;
-                free(freed);
+                free(frd);
         }
 	head = NULL;
 }
