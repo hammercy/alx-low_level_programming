@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * delete_nodeint_at_index -delete node at n index.
+ * delete_nodeint_at_index - delete node at n index.
  * @head: pointer of pointer to linkedlist of type listint_t.
- * index: index position of the node tobe deleted.
+ * @index: index position of the node tobe deleted.
  *
  * Return : 1 on success -1 otherwise.
  */
@@ -23,7 +23,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(crnt);
 		return (1);
 	}
-	while (current != NULL && i < index)
+	while (crnt != NULL && i < index)
 	{
 		prev = crnt;
 		crnt = crnt->next;
