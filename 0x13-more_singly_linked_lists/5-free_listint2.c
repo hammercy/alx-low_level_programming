@@ -7,16 +7,17 @@
  * @head: pointer to the linked list tobe freed.
  *
  */
-void free_listint2(listint_t *head)
+void free_listint2(listint_t **head)
 {
-        listint_t *ptr, *frd;
+        listint_t *frd;
 
-	ptr = head;
-        while (ptr != NULL)
+	if (head == NULL)
+		return;
+        while (*head != NULL)
         {
-                frd = ptr;
-                ptr = ptr->next;
+                frd = *head;
+                *head = (*head)->next;
                 free(frd);
         }
-	head = NULL;
+	*head = NULL;
 }
