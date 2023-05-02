@@ -46,6 +46,7 @@ int _strlen(char *str)
 	cnt = 0;
 	for (i = 0; str[i] != '\0'; i++)
 		cnt++;
+	cnt++;
 	return (cnt);
 }
 /**
