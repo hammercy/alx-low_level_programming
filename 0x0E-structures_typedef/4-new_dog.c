@@ -23,7 +23,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		if (ptr->name != NULL)
 			_strcpy(ptr->name, name);
 	}
-        if (owner != NULL)
+	if (owner != NULL)
 	{
 		ptr->owner = malloc((_strlen(owner) + 1));
 		if (ptr->owner != NULL)
@@ -69,4 +69,3 @@ char *_strcpy(char *dest, const char *src)
 		return (NULL);
 	return (dest);
 }
-	
