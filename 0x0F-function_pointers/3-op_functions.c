@@ -19,10 +19,10 @@ int op_add(int a, int b)
  * Return: the difference
  */
 
- int op_sub(int a, int b)
- {
-	 return (a - b);
- }
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
 /**
  * op_mul - multiply two integers
  * @a: first integer
@@ -31,10 +31,10 @@ int op_add(int a, int b)
  * Return: the multiplication
  */
 
- int op_mul(int a, int b)
- {
-	 return (a * b);
- }
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
 /**
  * op_div - divid two integers
  * @a: first integer
@@ -43,10 +43,10 @@ int op_add(int a, int b)
  * Return: the division
  */
 
- int op_div(int a, int b)
- {
-	 return (a / b);
- }
+int op_div(int a, int b)
+{
+	return (a / b);
+}
 /**
  * op_mod - calculate mod of a by b
  * @a: first integer
