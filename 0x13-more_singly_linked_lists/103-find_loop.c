@@ -9,18 +9,18 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *ptrslow;
-	listint_t *ptrfast;
+	listint_t *ptrs;
+	listint_t *ptrf;
 
-	ptrslow = head;
-	ptrfast = head;
+	ptrs = head;
+	ptrf = head;
 
-	while (slow && fast && fast->next)
+	while (ptrs && ptrf && ptrf->next)
 	{
-		ptrslow = ptrslow->next;
-		ptrfast = ptrfast->next->next;
-		if (ptrslow == ptrfast)
-			return (ptrslow);
+		ptrs = ptrs->next;
+		ptrf = ptrf->next->next;
+		if (ptrs == ptrf)
+			return (ptrs);
 	}
 	return (NULL);
 }
