@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "3-calc.h"
+#include <stdarg.h>
+/**
+ * main - perform simple operation over two integers
+ * @argc -integer that count the number of arguments
+ * @argv -pointer to string that contain arguments the the operaton
+ *
+ * Description: calcuate num1 operator numb2
+ * operator is one of the following
+ * if the number of arguments is wrong, print Error, followed by a new line,
+ * and exit with the status 98
+ * if the operator is none of the above, print Error, followed by a new line,
+ * and exit with the status 99
+ * if the user tries to divide (/ or %) by 0, print Error, followed by a new
+ * line, and exit with the status 100
+ *
+ * Return: 1 on success otherwsie 98, 99, 100 depending on the error.
+ */
+int main(int argc, char *argv)
+{
+	int i, a, b;
+	char oprnd;
+
+	if (argc > 4 || argc < 3)
+	{
+		printf("Error");
+		
+	
+    printf("%d\n", get_op_func("+")(10, 5));
+    printf("%d\n", get_op_func("-")(10, 5));
+    printf("%d\n", get_op_func("*")(10, 5));
+    printf("%d\n", get_op_func("/")(10, 5));
+    printf("%d\n", get_op_func("%")(10, 5));
+    printf("%p\n", get_op_func("a"));
+    return 0;
+}
