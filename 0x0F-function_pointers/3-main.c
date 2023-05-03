@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	int a, b;
 	int (*func)(int, int);
 
-	if (argc != 4)
+	if (argc != 4 || argv[1][0] == '\0' || argv[3][3] == '\0')
 	{
 		printf("Error\n");
 		return (98);
@@ -41,6 +41,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		return (100);
 	}
-	printf("%d\n", func(a,b));
+
+	printf("%d\n", func(a, b));
 	return (0);
 }
