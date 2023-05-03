@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	if (bytes < 0)
 	{
 		printf("Error\n");
-		return 2;
+		return (2);
 	}
 	ptr = (unsigned char *)main;
 	for (i = 0; i < bytes; i++)
@@ -36,5 +36,5 @@ int main(int argc, char **argv)
 			printf(" ");
 	}
 	printf("\n");
-	return 0;
+	return (0);
 }
