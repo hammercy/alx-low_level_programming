@@ -1,4 +1,4 @@
-#include <stdlib>
+#include <stdlib.h>
 #include "main.h"
 /**
  * rot13 - encodes a string using rot13.
@@ -8,7 +8,6 @@
  */
 char *rot13(char *s)
 {
-	int i;
 	char *ptr = s;
 
 	while (*s)
