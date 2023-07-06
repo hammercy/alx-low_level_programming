@@ -13,6 +13,7 @@ unsigned int binary_to_uint(const char *b)
 	uint i;
 	uint inum = 0;
 	uint strln = 0;
+	uint m01;
 
 	if (b == NULL)
 		return (0);
@@ -21,14 +22,17 @@ unsigned int binary_to_uint(const char *b)
 		strln++;
 		mult2 = mult2 * 2;
 	}
-	i = 0;
-	while (i < strln)
+	mult2 = mult2 / 2;
+	for (i = 0; i < strln; i++)
 	{
-		if (b[i] < 48 && b[i] > 49)
+		if (b[i] == '0')
+			m01 = 0;
+		else if(b[i] == '1')
+			m01 = 1;
+		else
 			return (0);
-		inum = inum + (mult2 * ((int)b[i] - 48));
+		inum = inum + (mult2 * m01);
 		mult2 = mult2 / 2;
-		i++;
 	}
 	return (inum);
 }
