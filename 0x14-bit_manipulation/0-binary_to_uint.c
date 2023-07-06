@@ -23,11 +23,12 @@ unsigned int binary_to_uint(const char *b)
 		mult2 = mult2 * 2;
 	}
 	mult2 = mult2 / 2;
+
 	for (i = 0; i < strln; i++)
 	{
 		if (b[i] == '0')
 			m01 = 0;
-		else if(b[i] == '1')
+		else if (b[i] == '1')
 			m01 = 1;
 		else
 			return (0);
