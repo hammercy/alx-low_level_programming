@@ -10,6 +10,7 @@ void print_binary(unsigned long int n)
 	unsigned long int msk01, msk02;
 	unsigned long int msk, msk001;
 	int strt = 0;
+
 	msk01 = 1;
 	msk02 = 2;
 	msk001 = 1;
@@ -25,7 +26,7 @@ void print_binary(unsigned long int n)
 	while (msk001 != 0)
 	{
 		msk = n & msk01;
-		if ( msk != 0)
+		if (msk != 0)
 			strt++;
 		if (msk == 0 && strt > 0)
 			_putchar('0');
