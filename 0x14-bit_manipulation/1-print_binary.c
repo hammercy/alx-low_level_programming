@@ -8,10 +8,11 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int msk01, msk02;
-	unsigned long int msk;
-
+	unsigned long int msk, msk001;
+	int strt = 0;
 	msk01 = 1;
 	msk02 = 2;
+	msk001 = 1;
 
 	while (msk02 != 0)
 	{
@@ -19,13 +20,18 @@ void print_binary(unsigned long int n)
 		msk02 <<= 1;
 	}
 
-	while (n != 0)
+	if (n == 0)
+		_putchar('0');
+	while (msk001 != 0)
 	{
-		msk = n & mask01;
-		if (msk == 0)
+		msk = n & msk01;
+		if ( msk != 0)
+			strt++;
+		if (msk == 0 && strt > 0)
 			_putchar('0');
-		else
-			_purchar('1');
+		else if (msk != 0 && strt > 0)
+			_putchar('1');
 		n <<= 1;
+		msk001 <<= 1;
 	}
 }
