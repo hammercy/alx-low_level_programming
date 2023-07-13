@@ -22,7 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (filename == NULL)
 		return (fail + 1);
-	buff = (char *)malloc((letters + 1)* sizeof(char));
+	buff = (char *)malloc((letters + 1) * sizeof(char));
 	if (buff == NULL)
 		return (fail + 1);
 	fd = open(filename, O_RDONLY);
@@ -35,6 +35,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (wcnt == fail)
 		return (fail + 1);
 	fsync(fd);
-	close(fd);		
+	close(fd);
 	return (wcnt);
 }
