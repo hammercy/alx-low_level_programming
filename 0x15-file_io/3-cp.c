@@ -58,7 +58,8 @@ int main(int ac, char **av)
 	fsync(wfd);
 	crfd = close(rfd);
 	cwfd = close(wfd);
-	printcloseErr(crfd, cwfd);
+	if (crfd == fail || cwfd == fail)
+		printcloseErr(crfd, cwfd);
 	return (0);
 }
 /**
@@ -103,7 +104,7 @@ void printcloseErr(int crfd, int cwfd)
 		dprintf(2, "Error: Can't close fd %d, %d\n", crfd, cwfd);
 	else if (crfd == -1)
 		dprintf(2, "Error: Can't close fd %d\n", crfd);
-	else if (cwfd == -1)
+	else
 		dprintf(2, "Error: Can't close fd %d\n", cwfd);
 	exit(100);
 }
