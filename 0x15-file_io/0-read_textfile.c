@@ -32,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (rcnt == fail)
 		return (fail + 1);
 	wcnt = write(1, buff, rcnt);
-	if (wcnt == fail)
+	if (wcnt == fail || wcnt < rcnt)
 		return (fail + 1);
 	fsync(fd);
 	close(fd);
