@@ -13,5 +13,5 @@ int cp(int num, char *[]);
 void printuseErr(void);
 void printreadErr(char *file);
 void printwriteErr(char *file);
-void printcloseErr(int fd);
+void printcloseErr(int crfd, int cwfd);
 #endif

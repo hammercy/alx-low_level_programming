@@ -30,7 +30,7 @@
 int main(int ac, char **av)
 {
 	ssize_t rcnt = 1, wcnt = 0;
-	int fd, rfd, wfd, crfd, cwfd, bsize = 1024, fail = -1;
+	int rfd, wfd, crfd, cwfd, bsize = 1024, fail = -1;
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buff[1024];
 
@@ -58,14 +58,7 @@ int main(int ac, char **av)
 	fsync(wfd);
 	crfd = close(rfd);
 	cwfd = close(wfd);
-	if (crfd == fail || cwfd == fail)
-	{
-		if (crfd == fail && cwfd != fail)
-			fd = rfd;
-		else
-			fd = wfd;
-		printcloseErr(fd);
-	}
+	printcloseErr(crfd, cwfd);
 	return (0);
 }
 /**
@@ -99,12 +92,18 @@ void printwriteErr(char *file)
 }
 /**
  * printcloseErr -  prints error to stderr cause by closing a file.
- * @fd: file descriptor of the file to be closed.
+ * @crfd: file descriptor of the read file to be closed.
+ * @cwfd: file descriptor of the write file to be closed
  *
  */
 
-void printcloseErr(int fd)
+void printcloseErr(int crfd, int cwfd)
 {
-	dprintf(2, "Error: Can't close fd %d\n", fd);
+	if (crfd == -1 && cwfd == -1)
+		dprintf(2, "Error: Can't close fd %d, %d\n", crfd, cwfd);
+	else if (crfd == -1)
+		dprintf(2, "Error: Can't close fd %d\n", crfd);
+	else if (cwfd == -1)
+		dprintf(2, "Error: Can't close fd %d\n", cwfd);
 	exit(100);
 }
