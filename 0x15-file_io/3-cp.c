@@ -94,7 +94,7 @@ void printreadErr(char *file)
  */
 void printwriteErr(char *file)
 {
-	dprintf(2, "Error: Can't write to %s", file);
+	dprintf(2, "Error: Can't write to %s\n", file);
 	exit(99);
 }
 /**
@@ -105,6 +105,6 @@ void printwriteErr(char *file)
 
 void printcloseErr(int fd)
 {
-	dprintf(2, "Error: Can't close fd %d", fd);
+	dprintf(2, "Error: Can't close fd %d\n", fd);
 	exit(100);
 }
