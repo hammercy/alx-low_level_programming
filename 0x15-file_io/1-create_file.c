@@ -25,7 +25,7 @@ int create_file(const char *filename, char *text_content)
 
 	mode = S_IRUSR | S_IWUSR;
 	flgc = O_RDWR | O_CREAT | O_EXCL;
-	flgo = O_RDWR | O_TRUNC
+	flgo = O_RDWR | O_TRUNC;
 	if (filename == NULL)
 		return (fail);
 	if (text_content == NULL)
@@ -35,7 +35,7 @@ int create_file(const char *filename, char *text_content)
 	{
 		if (errno == EACCES)
 		{
-			fd = open(filename, flago);
+			fd = open(filename, flgo);
 			if (fd == fail)
 				return (fail);
 		}
