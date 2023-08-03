@@ -12,12 +12,18 @@ void print_binary(unsigned long int n)
 	int i;
 
 	iptr = NULL;
-	rptr = _dtob(n, iptr);
+	rptr = _dtob(n, &iptr);
 	if (rptr == NULL)
-		exit(0);
-	for (i = 0; rptr[i] != '\0'; i++)
-		_putchar(rptr[i]);
-	free(iptr);
+	{
+		;
+	}
+	else
+	{
+		for (i = 0; rptr[i] != '\0'; i++)
+			_putchar(rptr[i]);
+	}
+	if (iptr != NULL)
+		free(iptr);
 }
 /**
  * _dtob - change an unsigned long int to binary sequenc of characters.
@@ -27,13 +33,13 @@ void print_binary(unsigned long int n)
  * Return: pointer to the start of the binary number.
  */
 
-char *_dtob(ulint inum, char *iptr)
+char *_dtob(ulint inum, char **iptr)
 {
 	int max_dGt = 65, i;
 	char *rptr;
 	ulint mask = 1, mskd;
 
-	iptr = (char *)malloc((max_dGt + 1) * sizeof(char));
+	*iptr = (char *)malloc((max_dGt + 1) * sizeof(char));
 	if (iptr == NULL)
 		return (NULL);
 	iptr[max_dGt] = '\0';
