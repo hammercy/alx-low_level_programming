@@ -66,6 +66,6 @@ char *_dtob(ulint inum, char **iptr)
 	}
 /*	for (i = 0; rptr[i] != '\0'; i++)
 		printf("%c", rptr[i]);
-	printf("\n");
-	return (rptr); */
+		printf("\n");*/
+	return (rptr); 
 }
