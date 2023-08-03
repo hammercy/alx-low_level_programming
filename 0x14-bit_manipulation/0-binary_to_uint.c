@@ -17,14 +17,12 @@ unsigned int binary_to_uint(const char *b)
 
 	if (b == NULL)
 		return (0);
-	for (i = 0; b[i] != '\0'; i++)
+	for (i = 1; b[i] != '\0'; i++)
 	{
 		strln++;
 		mult2 = mult2 * 2;
 	}
-	mult2 = mult2 / 2;
-
-	for (i = 0; i < strln; i++)
+	for (i = 0; b[i] != '\0'; i++)
 	{
 		if (b[i] == '0')
 			m01 = 0;
