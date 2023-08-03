@@ -40,13 +40,13 @@ char *_dtob(ulint inum, char **iptr)
 	ulint mask = 1, mskd;
 
 	*iptr = (char *)malloc((max_dGt + 1) * sizeof(char));
-	if (iptr == NULL)
+	if (iptr[0] == NULL)
 		return (NULL);
-	iptr[max_dGt] = '\0';
+	(*iptr)[max_dGt] = '\0';
 	if (inum == 0)
 	{
-		iptr[max_dGt - 1] = '0';
-		rptr = &iptr[max_dGt - 1];
+		(*iptr)[max_dGt - 1] = '0';
+		rptr = &((*iptr)[max_dGt - 1]);
 		return (rptr);
 	}
 	for (i = max_dGt - 1; mask >= 1; i--)
@@ -54,18 +54,18 @@ char *_dtob(ulint inum, char **iptr)
 		mskd = mask & inum;
 		if (mskd == mask)
 		{
-			iptr[i] = '1';
-			rptr = &(iptr[i]);
-/*			printf("%c",iptr[i]); */
+			(*iptr)[i] = '1';
+			rptr = &((*iptr)[i]);
 		}
 		else if (mskd == 0)
 		{
-			iptr[i] = '0';
-/*			printf("%c", iptr[i]); */
+			(*iptr)[i] = '0';
 		}
 		mask = mask << 1;
 		mskd = 0;
 	}
-/*	printf("\n"); */
-	return (rptr);
+/*	for (i = 0; rptr[i] != '\0'; i++)
+		printf("%c", rptr[i]);
+	printf("\n");
+	return (rptr); */
 }
