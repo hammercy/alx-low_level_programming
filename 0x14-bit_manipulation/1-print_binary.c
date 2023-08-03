@@ -6,7 +6,7 @@
  *
  */
 
-void print_binary(ulint n)
+void print_binary(unsigned long int n)
 {
 	char *iptr, *rptr;
 	int i;
