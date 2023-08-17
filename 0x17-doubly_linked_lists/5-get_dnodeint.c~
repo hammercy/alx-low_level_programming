@@ -1,9 +1,0 @@
-#include "lists.h"
-
-/**
- * add_dnodeint - add a new node at the beginning
- * @head: head ptr to the list
- * @n: data of the node type of int
- *
- * Return: address of the new element or NULL if failed.
- */
